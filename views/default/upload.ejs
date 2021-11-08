@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>文件上传</h2>
+    <form action="/album" method="post" enctype="multipart/form-data">
+        <input type="text" name='username' />
+        <input type="text" name='password' />
+        <!-- <input type="file" name="file" multiple> -->
+        <input type="text" name='code' />
+        <img id="verify_img" src="/user/code" title="看不清？点击刷新"
+            onclick="javascript:this.src='/user/code?t='+Math.random()">
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>
