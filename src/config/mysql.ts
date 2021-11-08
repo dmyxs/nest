@@ -2,14 +2,14 @@ import { join } from 'path';
 
 const config = {
   type: process.env.DB_TYPE,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
+  host: process.env.MYSQL_HOST,
+  port: process.env.MYSQL_PORT,
+  username: process.env.MYSQL_USERNAME,
+  password: process.env.MYSQL_PASSWORD,
   database:
     process.env.NODE_ENV === 'production'
-      ? process.env.DB_DATABASE_PRO
-      : process.env.DB_DATABASE_DEV,
+      ? process.env.MYSQL_DATABASE_PRO
+      : process.env.MYSQL_DATABASE_DEV,
   entities: [join(__dirname, '../', '**/**.entity{.ts,.js}')], //扫描匹配.entity.ts .entity.js文件
   synchronize: true, // 定义数据库表结构与实体类字段同步(这里一旦数据库少了字段就会自动加入,根据需要来使用)
   timezone: '+08:00',
@@ -26,12 +26,12 @@ const config = {
 };
 
 // const developmentConfig = {
-//   type: process.env.DB_TYPE,
-//   host: process.env.DB_HOST,
-//   port: process.env.DB_PORT,
-//   username: process.env.DB_USERNAME,
-//   password: process.env.DB_PASSWORD,
-//   database: process.env.DB_DATABASE_DEV,
+//   type: process.env.MYSQL_TYPE,
+//   host: process.env.MYSQL_HOST,
+//   port: process.env.MYSQL_PORT,
+//   username: process.env.MYSQL_USERNAME,
+//   password: process.env.MYSQL_PASSWORD,
+//   database: process.env.MYSQL_DATABASE_DEV,
 //   entities: [join(__dirname, '../', '**/**.entity{.ts,.js}')], //扫描匹配.entity.ts .entity.js文件
 //   synchronize: true, // 定义数据库表结构与实体类字段同步(这里一旦数据库少了字段就会自动加入,根据需要来使用)
 //   timezone: '+08:00',
@@ -50,11 +50,11 @@ const config = {
 // const productionConfig = {
 //   mysql: {
 //     type: process.env.DB_TYPE,
-//     host: process.env.DB_HOST,
-//     port: process.env.DB_PORT,
-//     username: process.env.DB_USERNAME,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_DATABASE_PRO,
+//     host: process.env.MYSQL_HOST,
+//     port: process.env.MYSQL_PORT,
+//     username: process.env.MYSQL_USERNAME,
+//     password: process.env.MYSQL_PASSWORD,
+//     database: process.env.MYSQL_DATABASE_PRO,
 //     entities: [join(__dirname, '../', '**/**.entity{.ts,.js}')],
 //     synchronize: true,
 //     timezone: '+08:00',

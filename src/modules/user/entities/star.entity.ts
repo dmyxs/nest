@@ -1,11 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
+import { Entity, Column, ManyToMany } from 'typeorm';
+import { BaseEntity } from 'utils/baseEntity';
 import { UsersEntity } from './user.entity';
 
 @Entity({ name: 'star' })
-export class StarEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class StarEntity extends BaseEntity {
   @Column({ type: 'varchar' })
   name: string;
 

@@ -1,17 +1,9 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToOne,
-  JoinColumn,
-} from 'typeorm';
+import { Entity, Column, OneToOne, JoinColumn } from 'typeorm';
+import { BaseEntity } from 'utils/baseEntity';
 import { UsersEntity } from './user.entity';
 
 @Entity({ name: 'avatar' })
-export class AvatarEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class AvatarEntity extends BaseEntity {
   @Column({ type: 'varchar' })
   url: string;
 

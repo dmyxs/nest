@@ -5,10 +5,9 @@ import { Redis } from 'ioredis';
 @Injectable()
 export class CacheService {
   private client: Redis;
-  constructor(private redisService: RedisService) {
-    // this.getClient();
-  }
+  constructor(private redisService: RedisService) { }
 
+  // 初始化获取redis
   onModuleInit(): void {
     this.getClient();
   }
@@ -39,7 +38,6 @@ export class CacheService {
    */
   public async get(key: string): Promise<any> {
     const data = await this.client.get(key);
-    // const data = await this.client.hgetall(key);
     if (data) return data;
     return null;
   }
